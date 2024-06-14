@@ -18,6 +18,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*",]
 
+CSRF_TRUSTED_ORIGINS = ['https://newnotes.coofis.com']
+
 
 # Application definition
 
