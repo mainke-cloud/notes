@@ -142,5 +142,6 @@ OIDC_CREATE_USER = True
 OIDC_RP_SCOPES = "openid profile email offline_access"
 
 LOGIN_REDIRECT_URL = os.environ.get("LOGIN_REDIRECT_URL", "/")
+LOGIN_URL = os.environ.get("LOGIN_URL", "oidc/authenticate")
 
 
