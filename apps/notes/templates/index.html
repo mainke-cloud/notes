@@ -5,7 +5,7 @@
 
 {% block bootstrap5_content %}
     <div class="container mx-auto mt-4">
-      <h1>{% block title %} Selemat datang, {{ request.user.username }}{% endblock %}</h1>
+      <h1>{% block title %} Selamat datang, {{ request.user.username }}{% endblock %}</h1>
 
         {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
 
