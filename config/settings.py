@@ -30,8 +30,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'djongo',
     'pymongo',
+    'crispy_forms',
+    'bootstrap5',
     'notes',
 ]
 
@@ -101,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTHENTICATION_BACKENDS = [ 
         "django.contrib.auth.backends.ModelBackend",
-        "mozilla_django_oidc.auth.OIDCAuthenticationBackend"
+        "config.authbackends.NewSSOAuthenticationBackend"
 ]
 
 # Internationalization
@@ -109,7 +112,7 @@ AUTHENTICATION_BACKENDS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Jakarta'
 
 USE_I18N = True
 

@@ -1,0 +1,32 @@
+{% extends 'bootstrap5/bootstrap5.html' %}
+{% load bootstrap5 %}
+
+{% block bootstrap5_title %}New Notes{% endblock %}
+
+{% block bootstrap5_content %}
+    <div class="container mx-auto mt-4">
+      <h1>{% block title %} Selemat datang, {{ request.user.username }}{% endblock %}</h1>
+
+        {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
+
+        {% block content %}
+        <a href="{% url 'notes-add' %}" class="btn btn-success mb-3" >Add</a>
+        <div class="row">
+        {% for itm in notes_list %}
+        <div class="col-sm-6">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ itm.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Last update: {{ itm.edited_date }}</h6>
+            <p class="card-text">{{ itm.body }}</p>
+            <a href="{% url 'notes-delete' itm.id  %}" class="card-link">Delete</a>
+            <a href="{% url 'notes-edit' itm.id %}" class="card-link">Edit</a>
+          </div>
+        </div>
+        </div>
+        {% endfor %}
+        </div>
+        {% endblock %}
+    </div>
+
+{% endblock %}

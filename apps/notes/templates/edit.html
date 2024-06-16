@@ -1,0 +1,20 @@
+{% extends 'bootstrap5/bootstrap5.html' %}
+{% load bootstrap5 %}
+
+{% block bootstrap5_title %}Edit Notes{% endblock %}
+
+{% block bootstrap5_content %}
+    <div class="container mx-auto mt-4">
+      <h1>{% block title %} Edit Notes {% endblock %}</h1>
+
+        {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
+
+        {% block content %}
+         <form role="form" action=""  method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons submit='Edit'%}{% endbuttons %}
+        </form>
+        {% endblock %}
+    </div>
+{% endblock %}
